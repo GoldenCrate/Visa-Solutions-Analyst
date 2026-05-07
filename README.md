@@ -1,6 +1,6 @@
 # Visa Stablecoin Solutions Analyst
 
-This project models the analytical and client-facing work performed by a Solutions Analyst on Visa's Crypto Solutions team. It synthesises 560 rows of synthetic data across 80 client profiles and 480 market observations to surface stablecoin adoption trends, client readiness scores, settlement economics, and AI-generated pre-sales pitches. The centrepiece is a Claude-powered GTM Pitch Generator — the kind of tool a solutions analyst uses before walking into a client meeting with a bank, fintech, or merchant.
+This project models the analytical and client-facing work performed by a Solutions Analyst on Visa's Crypto Solutions team. It synthesises 560 rows of synthetic data across 80 client profiles and 480 market observations to surface stablecoin adoption trends, client readiness scores, settlement economics, and AI-generated pre-sales pitches. **The centrepiece is a Claude-powered GTM Pitch Generator — the kind of tool a solutions analyst uses before walking into a client meeting with a bank, fintech, or merchant.** Rather than a generic output, **Claude reads each client's actual data — their readiness score, identified gaps, annual settlement volume, and estimated savings — and generates a custom-tailored 3-bullet pre-sales pitch and objection handler specific to that client's situation.**
 
 ## Live Dashboard
 
