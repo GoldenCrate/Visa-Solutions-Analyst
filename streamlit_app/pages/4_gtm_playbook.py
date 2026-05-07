@@ -127,27 +127,29 @@ if st.session_state.get("pitch_generated"):
     st.subheader("Ask a Follow-Up Question")
     st.caption("Ask Claude anything about this client or pitch — how to handle objections, what to emphasise, competitive angles, next steps.")
 
+    with st.form("followup_form", clear_on_submit=True):
+        user_q = st.text_input(
+            "Your question",
+            placeholder="e.g. How should I handle it if they say they're already working with a competitor?",
+            label_visibility="collapsed",
+        )
+        submitted = st.form_submit_button("Ask", type="primary")
+
+    if submitted and user_q.strip():
+        st.session_state["chat_history"].append({"role": "user", "content": user_q})
+        try:
+            answer = answer_followup(
+                system_context=st.session_state["pitch_context"],
+                chat_history=st.session_state["chat_history"][:-1],
+                user_question=user_q,
+            )
+            st.session_state["chat_history"].append({"role": "assistant", "content": answer})
+        except Exception as e:
+            st.error(f"API call failed: {e}")
+
     for msg in st.session_state["chat_history"]:
         with st.chat_message(msg["role"]):
             st.markdown(msg["content"])
-
-    if user_q := st.chat_input("e.g. How should I handle it if they say they're already working with a competitor?"):
-        with st.chat_message("user"):
-            st.markdown(user_q)
-        st.session_state["chat_history"].append({"role": "user", "content": user_q})
-
-        with st.chat_message("assistant"):
-            with st.spinner("Thinking..."):
-                try:
-                    answer = answer_followup(
-                        system_context=st.session_state["pitch_context"],
-                        chat_history=st.session_state["chat_history"][:-1],
-                        user_question=user_q,
-                    )
-                    st.markdown(answer)
-                    st.session_state["chat_history"].append({"role": "assistant", "content": answer})
-                except Exception as e:
-                    st.error(f"API call failed: {e}")
 
 st.caption("Powered by Claude Haiku via the Anthropic API. Each generation uses ~500 tokens (~$0.0001).")
 
