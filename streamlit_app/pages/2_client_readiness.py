@@ -39,7 +39,7 @@ if mode == "Browse existing clients":
             "Region": row["region"],
             "Score": r["score"],
             "Tier": r["tier"],
-            "Volume ($B)": row["annual_volume_bn"],
+            "Volume_B": row["annual_volume_bn"],
         })
 
     result_df = pd.DataFrame(results).sort_values("Score", ascending=False)
@@ -59,7 +59,7 @@ if mode == "Browse existing clients":
         return f"color: {TIER_COLOR.get(val, 'black')}; font-weight: bold"
 
     styled = result_df.style.map(color_tier, subset=["Tier"]).format(
-        {"Score": "{:.1f}", "Volume ($B)": "${:.1f}B"}
+        {"Score": "{:.1f}", "Volume_B": "${:.1f}B"}
     )
     st.dataframe(styled, use_container_width=True, height=380)
 
@@ -77,7 +77,7 @@ if mode == "Browse existing clients":
             )),
             tooltip=["Client:N", "Type:N", "Region:N",
                      alt.Tooltip("Score:Q", format=".1f"), "Tier:N",
-                     alt.Tooltip("Volume ($B):Q", format="$.1fB")],
+                     alt.Tooltip("Volume_B:Q", title="Volume ($B)", format="$.1f")],
         )
         .properties(height=300)
     )
