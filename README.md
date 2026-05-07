@@ -10,7 +10,6 @@ This project models the analytical and client-facing work performed by a Solutio
 
 - **Role:** Analyst, Solutions Management
 - **Company:** Visa Inc. — Crypto Solutions
-- **Ref:** REF081443W
 
 This project directly demonstrates the role's core responsibilities: client stablecoin solutioning, pre-sales preparation, Go-To-Market strategy, and AI tooling for research and prototyping.
 
