@@ -58,7 +58,7 @@ if mode == "Browse existing clients":
     def color_tier(val):
         return f"color: {TIER_COLOR.get(val, 'black')}; font-weight: bold"
 
-    styled = result_df.style.applymap(color_tier, subset=["Tier"]).format(
+    styled = result_df.style.map(color_tier, subset=["Tier"]).format(
         {"Score": "{:.1f}", "Volume ($B)": "${:.1f}B"}
     )
     st.dataframe(styled, use_container_width=True, height=380)
