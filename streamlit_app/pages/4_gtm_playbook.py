@@ -1,0 +1,144 @@
+import streamlit as st
+import altair as alt
+import pandas as pd
+from utils.data_loader import load_clients
+from utils.readiness_score import compute_readiness_score
+from utils.settlement_model import compute_settlement_economics
+from utils.gtm_pitch import generate_gtm_pitch
+
+st.set_page_config(page_title="GTM Playbook", layout="wide")
+st.title("GTM Playbook & AI Pitch Generator")
+st.caption("Prioritize which clients to engage first, then generate a client-tailored pre-sales pitch using Claude AI — the kind of tool a solutions analyst uses before walking into a client meeting.")
+
+clients_df = load_clients()
+
+# ── Segment prioritization matrix ─────────────────────────────────────────────
+st.subheader("Client Segment Prioritization Matrix")
+st.markdown("Clients scored by readiness and annual settlement volume — the two variables that determine GTM priority.")
+
+scored = []
+for _, row in clients_df.iterrows():
+    r = compute_readiness_score(
+        row["tech_readiness"], row["compliance_readiness"],
+        row["integration_complexity"], row["current_settlement"],
+    )
+    econ = compute_settlement_economics(
+        row["annual_volume_bn"], row["region"], row["integration_complexity"]
+    )
+    scored.append({
+        "Client": row["client_name"],
+        "Type": row["client_type"],
+        "Region": row["region"],
+        "Readiness Score": r["score"],
+        "Tier": r["tier"],
+        "Annual Volume ($B)": row["annual_volume_bn"],
+        "Annual Savings ($M)": round(econ["annual_savings_usd"] / 1_000_000, 2),
+        "Payback (months)": econ["payback_months"],
+        "_gaps": r["gaps"],
+        "_complexity": row["integration_complexity"],
+    })
+
+scored_df = pd.DataFrame(scored)
+
+priority_matrix = (
+    alt.Chart(scored_df)
+    .mark_circle()
+    .encode(
+        x=alt.X("Readiness Score:Q", scale=alt.Scale(domain=[0, 100]), title="Readiness Score"),
+        y=alt.Y("Annual Volume ($B):Q", title="Annual Settlement Volume ($B)"),
+        size=alt.Size("Annual Savings ($M):Q", legend=alt.Legend(title="Annual Savings ($M)"), scale=alt.Scale(range=[40, 600])),
+        color=alt.Color("Tier:N", scale=alt.Scale(
+            domain=["Ready", "Developing", "Early Stage"],
+            range=["#1a7a4a", "#d4850a", "#c0392b"]
+        )),
+        shape=alt.Shape("Type:N"),
+        tooltip=[
+            "Client:N", "Type:N", "Region:N",
+            alt.Tooltip("Readiness Score:Q", format=".1f"),
+            alt.Tooltip("Annual Volume ($B):Q", format="$.1fB"),
+            alt.Tooltip("Annual Savings ($M):Q", format="$.2fM"),
+            alt.Tooltip("Payback (months):Q", format=".1f"),
+            "Tier:N",
+        ],
+    )
+    .properties(height=380)
+    .interactive()
+)
+
+# Quadrant reference lines
+vline = alt.Chart(pd.DataFrame({"x": [70]})).mark_rule(strokeDash=[6, 3], color="#888").encode(x="x:Q")
+hline = alt.Chart(pd.DataFrame({"y": [scored_df["Annual Volume ($B)"].median()]})).mark_rule(strokeDash=[6, 3], color="#888").encode(y="y:Q")
+st.altair_chart(priority_matrix + vline + hline, use_container_width=True)
+st.caption("Top-right quadrant = highest priority: Ready clients with large settlement volumes. Dashed lines: readiness threshold (70) and median volume.")
+
+st.divider()
+
+# ── Recommended approach by tier ──────────────────────────────────────────────
+st.subheader("GTM Approach by Readiness Tier")
+tier_cols = st.columns(3)
+with tier_cols[0]:
+    st.markdown("**Ready (score 70+)**")
+    st.success("Move directly to commercial terms. Lead with settlement cost savings and speed to live. Target 90-day close.")
+with tier_cols[1]:
+    st.markdown("**Developing (45-69)**")
+    st.warning("Run a 60-day technical pilot. Pair with a Visa implementation specialist. Close after pilot success metrics.")
+with tier_cols[2]:
+    st.markdown("**Early Stage (<45)**")
+    st.error("Do not pursue a deal now. Add to a 6-month nurture track. Assign to regional enablement team for infrastructure support.")
+
+st.divider()
+
+# ── AI Pitch Generator ────────────────────────────────────────────────────────
+st.subheader("AI Pitch Generator")
+st.markdown("Select a client to generate a Claude-powered, tailored pre-sales pitch and objection handler.")
+
+top_clients = scored_df.sort_values("Readiness Score", ascending=False).head(20)
+client_choice = st.selectbox(
+    "Select a client",
+    options=top_clients["Client"].tolist(),
+    format_func=lambda c: f"{c} — {top_clients.loc[top_clients['Client']==c, 'Tier'].values[0]} ({top_clients.loc[top_clients['Client']==c, 'Readiness Score'].values[0]:.0f}/100)"
+)
+
+selected = scored_df[scored_df["Client"] == client_choice].iloc[0]
+client_row = clients_df[clients_df["client_name"] == client_choice].iloc[0]
+
+with st.expander("Client snapshot", expanded=True):
+    d1, d2, d3, d4 = st.columns(4)
+    d1.metric("Readiness Score", f"{selected['Readiness Score']:.1f}/100")
+    d2.metric("Tier", selected["Tier"])
+    d3.metric("Annual Volume", f"${selected['Annual Volume ($B)']:.1f}B")
+    d4.metric("Est. Annual Savings", f"${selected['Annual Savings ($M)']:.2f}M")
+
+    econ = compute_settlement_economics(
+        client_row["annual_volume_bn"], client_row["region"], client_row["integration_complexity"]
+    )
+
+    st.markdown("**Identified Gaps:**")
+    for gap in selected["_gaps"]:
+        st.write(f"- {gap}")
+
+if st.button("Generate GTM Pitch", type="primary"):
+    with st.spinner("Generating pitch with Claude AI..."):
+        try:
+            pitch = generate_gtm_pitch(
+                client_name=client_choice,
+                client_type=selected["Type"],
+                region=selected["Region"],
+                readiness_tier=selected["Tier"],
+                readiness_score=selected["Readiness Score"],
+                gaps=selected["_gaps"],
+                annual_savings_usd=econ["annual_savings_usd"],
+                payback_months=econ["payback_months"],
+            )
+
+            st.subheader("Pre-Sales Pitch")
+            for bullet in pitch["pitch_bullets"]:
+                st.markdown(f"- {bullet}")
+
+            st.subheader("Top Objection to Anticipate")
+            st.info(pitch["top_objection"])
+
+        except Exception as e:
+            st.error(f"API call failed: {e}. Ensure ANTHROPIC_API_KEY is set in your Streamlit secrets.")
+
+st.caption("Pitch generated by Claude Haiku via the Anthropic API. Each generation uses ~500 tokens (~$0.0001).")

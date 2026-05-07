@@ -1,0 +1,481 @@
+month,region,client_type,adoption_index,usdc_volume_bn,live_partners,yoy_growth_pct
+2024-01-01,North America,Bank,81.2,23.61,8,26.8
+2024-01-01,North America,Fintech,89.1,27.21,10,28.6
+2024-01-01,North America,Merchant,55.2,16.55,6,18.0
+2024-01-01,North America,Enabler,69.8,20.26,6,30.2
+2024-01-01,Europe,Bank,71.1,15.47,6,9.7
+2024-01-01,Europe,Fintech,82.8,18.14,8,28.5
+2024-01-01,Europe,Merchant,47.2,11.26,4,29.0
+2024-01-01,Europe,Enabler,58.7,13.47,6,9.2
+2024-01-01,Asia Pacific,Bank,63.2,12.74,7,34.1
+2024-01-01,Asia Pacific,Fintech,71.0,14.31,8,20.7
+2024-01-01,Asia Pacific,Merchant,45.5,8.7,5,14.1
+2024-01-01,Asia Pacific,Enabler,54.1,10.89,5,30.5
+2024-01-01,LAC,Bank,43.2,5.62,5,29.7
+2024-01-01,LAC,Fintech,52.7,6.37,6,26.4
+2024-01-01,LAC,Merchant,31.9,3.98,4,29.2
+2024-01-01,LAC,Enabler,39.8,4.18,2,29.1
+2024-01-01,MEA,Bank,35.5,3.45,2,11.1
+2024-01-01,MEA,Fintech,40.3,4.49,3,23.3
+2024-01-01,MEA,Merchant,24.5,2.57,2,23.1
+2024-01-01,MEA,Enabler,32.4,2.98,3,19.8
+2024-02-01,North America,Bank,83.0,24.05,9,14.3
+2024-02-01,North America,Fintech,91.9,27.97,10,15.9
+2024-02-01,North America,Merchant,57.6,16.56,5,25.9
+2024-02-01,North America,Enabler,68.1,20.54,7,12.5
+2024-02-01,Europe,Bank,70.0,15.74,8,20.5
+2024-02-01,Europe,Fintech,80.7,18.3,9,12.1
+2024-02-01,Europe,Merchant,49.9,11.18,4,16.1
+2024-02-01,Europe,Enabler,59.7,12.91,6,10.4
+2024-02-01,Asia Pacific,Bank,60.3,12.41,6,26.9
+2024-02-01,Asia Pacific,Fintech,71.8,15.06,8,29.0
+2024-02-01,Asia Pacific,Merchant,45.0,8.52,5,10.6
+2024-02-01,Asia Pacific,Enabler,52.5,11.01,4,13.5
+2024-02-01,LAC,Bank,46.7,5.58,4,31.1
+2024-02-01,LAC,Fintech,53.1,6.19,4,19.7
+2024-02-01,LAC,Merchant,31.8,4.29,2,10.3
+2024-02-01,LAC,Enabler,39.2,4.72,4,21.3
+2024-02-01,MEA,Bank,38.4,3.78,4,23.9
+2024-02-01,MEA,Fintech,41.1,3.96,3,23.7
+2024-02-01,MEA,Merchant,22.6,2.73,1,33.9
+2024-02-01,MEA,Enabler,29.0,3.2,2,10.2
+2024-03-01,North America,Bank,85.9,25.18,8,23.4
+2024-03-01,North America,Fintech,90.2,28.12,10,17.0
+2024-03-01,North America,Merchant,55.9,16.64,4,30.3
+2024-03-01,North America,Enabler,69.6,20.52,6,23.0
+2024-03-01,Europe,Bank,68.0,15.84,6,25.8
+2024-03-01,Europe,Fintech,85.8,18.48,7,10.9
+2024-03-01,Europe,Merchant,48.4,10.71,4,23.0
+2024-03-01,Europe,Enabler,64.6,13.28,5,29.8
+2024-03-01,Asia Pacific,Bank,61.6,13.09,6,21.9
+2024-03-01,Asia Pacific,Fintech,73.1,14.59,6,12.4
+2024-03-01,Asia Pacific,Merchant,43.0,8.5,5,32.1
+2024-03-01,Asia Pacific,Enabler,56.8,10.89,6,32.1
+2024-03-01,LAC,Bank,46.8,5.94,3,25.9
+2024-03-01,LAC,Fintech,55.6,6.53,6,28.2
+2024-03-01,LAC,Merchant,32.4,3.47,4,11.3
+2024-03-01,LAC,Enabler,42.6,4.64,3,12.8
+2024-03-01,MEA,Bank,39.9,3.37,2,29.0
+2024-03-01,MEA,Fintech,41.9,4.27,3,11.9
+2024-03-01,MEA,Merchant,26.3,2.98,1,26.3
+2024-03-01,MEA,Enabler,27.2,3.11,2,26.7
+2024-04-01,North America,Bank,80.1,24.23,9,27.3
+2024-04-01,North America,Fintech,92.6,28.27,10,11.3
+2024-04-01,North America,Merchant,58.1,16.81,7,21.2
+2024-04-01,North America,Enabler,70.9,21.13,6,15.7
+2024-04-01,Europe,Bank,70.5,16.04,7,25.1
+2024-04-01,Europe,Fintech,80.8,18.61,8,19.3
+2024-04-01,Europe,Merchant,54.8,11.71,4,29.7
+2024-04-01,Europe,Enabler,57.9,13.45,7,8.5
+2024-04-01,Asia Pacific,Bank,66.3,12.69,5,14.3
+2024-04-01,Asia Pacific,Fintech,73.4,14.58,8,31.4
+2024-04-01,Asia Pacific,Merchant,48.7,8.78,3,19.5
+2024-04-01,Asia Pacific,Enabler,53.9,10.4,5,20.3
+2024-04-01,LAC,Bank,50.9,5.2,6,30.0
+2024-04-01,LAC,Fintech,59.6,6.1,6,24.0
+2024-04-01,LAC,Merchant,32.9,4.39,2,11.9
+2024-04-01,LAC,Enabler,41.0,4.86,3,15.7
+2024-04-01,MEA,Bank,37.0,3.31,4,9.5
+2024-04-01,MEA,Fintech,43.5,4.13,3,24.0
+2024-04-01,MEA,Merchant,27.8,2.63,3,21.6
+2024-04-01,MEA,Enabler,31.5,2.94,2,9.2
+2024-05-01,North America,Bank,83.0,25.31,8,19.2
+2024-05-01,North America,Fintech,94.4,28.15,9,30.5
+2024-05-01,North America,Merchant,58.1,17.23,7,30.8
+2024-05-01,North America,Enabler,71.3,20.55,6,29.7
+2024-05-01,Europe,Bank,73.0,16.25,7,11.6
+2024-05-01,Europe,Fintech,83.1,18.78,9,31.2
+2024-05-01,Europe,Merchant,45.0,11.17,6,15.2
+2024-05-01,Europe,Enabler,60.6,13.21,6,19.3
+2024-05-01,Asia Pacific,Bank,67.9,12.55,6,16.8
+2024-05-01,Asia Pacific,Fintech,74.2,14.7,7,16.0
+2024-05-01,Asia Pacific,Merchant,47.2,9.18,5,16.9
+2024-05-01,Asia Pacific,Enabler,55.4,11.53,5,25.6
+2024-05-01,LAC,Bank,48.6,5.55,6,15.8
+2024-05-01,LAC,Fintech,56.2,6.15,5,26.8
+2024-05-01,LAC,Merchant,32.1,4.25,3,27.6
+2024-05-01,LAC,Enabler,41.2,4.3,3,11.7
+2024-05-01,MEA,Bank,35.2,3.6,4,29.1
+2024-05-01,MEA,Fintech,41.9,4.03,4,14.8
+2024-05-01,MEA,Merchant,23.6,2.4,3,12.6
+2024-05-01,MEA,Enabler,34.1,3.36,3,20.6
+2024-06-01,North America,Bank,84.4,24.9,9,21.3
+2024-06-01,North America,Fintech,92.6,28.53,11,11.2
+2024-06-01,North America,Merchant,54.9,17.67,6,19.3
+2024-06-01,North America,Enabler,69.8,21.29,7,17.0
+2024-06-01,Europe,Bank,73.5,16.43,7,17.8
+2024-06-01,Europe,Fintech,83.9,18.83,7,12.0
+2024-06-01,Europe,Merchant,52.5,11.01,6,27.7
+2024-06-01,Europe,Enabler,60.3,13.6,6,29.1
+2024-06-01,Asia Pacific,Bank,66.6,13.12,6,27.4
+2024-06-01,Asia Pacific,Fintech,76.6,15.3,8,31.0
+2024-06-01,Asia Pacific,Merchant,44.5,8.48,5,26.5
+2024-06-01,Asia Pacific,Enabler,55.1,11.49,6,30.3
+2024-06-01,LAC,Bank,44.8,5.2,4,16.2
+2024-06-01,LAC,Fintech,55.6,6.63,6,11.0
+2024-06-01,LAC,Merchant,28.1,3.95,4,30.6
+2024-06-01,LAC,Enabler,41.4,4.85,3,10.4
+2024-06-01,MEA,Bank,38.3,3.94,3,11.9
+2024-06-01,MEA,Fintech,44.1,4.61,3,32.6
+2024-06-01,MEA,Merchant,27.3,2.54,2,9.4
+2024-06-01,MEA,Enabler,28.0,2.81,2,14.4
+2024-07-01,North America,Bank,79.8,24.86,9,33.1
+2024-07-01,North America,Fintech,97.9,29.25,11,30.6
+2024-07-01,North America,Merchant,58.3,17.76,6,31.0
+2024-07-01,North America,Enabler,70.3,20.77,7,13.2
+2024-07-01,Europe,Bank,72.9,16.73,7,24.5
+2024-07-01,Europe,Fintech,85.7,18.71,10,9.1
+2024-07-01,Europe,Merchant,50.7,10.86,5,10.5
+2024-07-01,Europe,Enabler,61.2,13.63,5,20.4
+2024-07-01,Asia Pacific,Bank,66.3,13.16,8,11.9
+2024-07-01,Asia Pacific,Fintech,78.1,15.15,8,23.6
+2024-07-01,Asia Pacific,Merchant,47.4,9.05,5,12.0
+2024-07-01,Asia Pacific,Enabler,55.1,11.29,7,20.8
+2024-07-01,LAC,Bank,51.8,5.74,6,16.2
+2024-07-01,LAC,Fintech,53.3,6.7,5,25.1
+2024-07-01,LAC,Merchant,33.6,3.71,5,23.9
+2024-07-01,LAC,Enabler,38.1,4.7,3,19.3
+2024-07-01,MEA,Bank,42.0,4.15,3,23.3
+2024-07-01,MEA,Fintech,43.2,4.32,5,25.6
+2024-07-01,MEA,Merchant,27.6,2.54,3,19.6
+2024-07-01,MEA,Enabler,32.3,4.01,3,21.8
+2024-08-01,North America,Bank,88.0,25.29,8,21.6
+2024-08-01,North America,Fintech,97.9,28.91,11,16.5
+2024-08-01,North America,Merchant,57.2,17.69,7,9.5
+2024-08-01,North America,Enabler,71.4,21.51,8,12.7
+2024-08-01,Europe,Bank,76.0,16.06,9,30.3
+2024-08-01,Europe,Fintech,82.5,19.58,8,12.1
+2024-08-01,Europe,Merchant,49.9,11.05,5,33.9
+2024-08-01,Europe,Enabler,67.6,14.19,6,16.4
+2024-08-01,Asia Pacific,Bank,66.8,12.85,8,25.3
+2024-08-01,Asia Pacific,Fintech,75.9,15.6,8,22.2
+2024-08-01,Asia Pacific,Merchant,47.0,9.01,5,34.7
+2024-08-01,Asia Pacific,Enabler,53.8,11.0,7,34.7
+2024-08-01,LAC,Bank,47.7,6.19,6,10.2
+2024-08-01,LAC,Fintech,55.7,6.73,6,20.7
+2024-08-01,LAC,Merchant,32.5,3.71,3,9.2
+2024-08-01,LAC,Enabler,37.5,5.07,5,21.2
+2024-08-01,MEA,Bank,40.7,3.13,3,14.6
+2024-08-01,MEA,Fintech,42.7,4.51,4,25.5
+2024-08-01,MEA,Merchant,26.1,2.61,3,17.9
+2024-08-01,MEA,Enabler,33.9,3.45,3,30.8
+2024-09-01,North America,Bank,86.9,25.54,10,21.6
+2024-09-01,North America,Fintech,98.3,29.14,11,31.0
+2024-09-01,North America,Merchant,56.9,17.35,5,32.8
+2024-09-01,North America,Enabler,72.7,21.31,8,17.1
+2024-09-01,Europe,Bank,76.2,16.69,8,20.1
+2024-09-01,Europe,Fintech,86.6,18.88,10,8.2
+2024-09-01,Europe,Merchant,52.2,11.32,6,34.5
+2024-09-01,Europe,Enabler,65.9,14.54,7,28.6
+2024-09-01,Asia Pacific,Bank,67.1,12.69,6,29.1
+2024-09-01,Asia Pacific,Fintech,74.5,15.7,9,27.8
+2024-09-01,Asia Pacific,Merchant,43.6,9.04,6,34.2
+2024-09-01,Asia Pacific,Enabler,53.7,11.43,6,27.8
+2024-09-01,LAC,Bank,45.1,5.43,5,21.2
+2024-09-01,LAC,Fintech,57.5,6.78,7,34.4
+2024-09-01,LAC,Merchant,34.5,3.85,4,23.0
+2024-09-01,LAC,Enabler,39.7,5.08,4,30.2
+2024-09-01,MEA,Bank,39.6,3.37,5,11.0
+2024-09-01,MEA,Fintech,45.2,4.04,4,28.9
+2024-09-01,MEA,Merchant,25.2,2.3,3,9.3
+2024-09-01,MEA,Enabler,31.5,3.71,5,31.2
+2024-10-01,North America,Bank,86.5,25.72,8,8.8
+2024-10-01,North America,Fintech,98.6,29.46,11,26.1
+2024-10-01,North America,Merchant,57.7,17.03,6,31.0
+2024-10-01,North America,Enabler,72.3,21.12,8,18.7
+2024-10-01,Europe,Bank,74.7,16.81,9,10.3
+2024-10-01,Europe,Fintech,87.9,19.01,8,29.8
+2024-10-01,Europe,Merchant,56.2,11.73,7,11.7
+2024-10-01,Europe,Enabler,64.9,13.75,7,18.6
+2024-10-01,Asia Pacific,Bank,66.1,14.07,7,17.9
+2024-10-01,Asia Pacific,Fintech,75.0,15.77,7,8.5
+2024-10-01,Asia Pacific,Merchant,44.6,9.41,6,19.4
+2024-10-01,Asia Pacific,Enabler,53.2,11.43,6,22.6
+2024-10-01,LAC,Bank,48.1,5.83,5,16.8
+2024-10-01,LAC,Fintech,57.2,6.6,5,28.0
+2024-10-01,LAC,Merchant,35.3,4.13,3,14.5
+2024-10-01,LAC,Enabler,42.9,5.06,4,31.6
+2024-10-01,MEA,Bank,39.8,4.03,3,29.2
+2024-10-01,MEA,Fintech,46.7,4.69,6,34.9
+2024-10-01,MEA,Merchant,26.0,2.57,3,23.2
+2024-10-01,MEA,Enabler,36.0,3.16,3,33.8
+2024-11-01,North America,Bank,87.7,25.76,8,33.9
+2024-11-01,North America,Fintech,98.8,29.57,9,14.6
+2024-11-01,North America,Merchant,58.3,17.61,6,16.4
+2024-11-01,North America,Enabler,73.2,21.55,8,18.4
+2024-11-01,Europe,Bank,77.9,16.7,8,16.2
+2024-11-01,Europe,Fintech,87.0,19.8,8,8.0
+2024-11-01,Europe,Merchant,53.9,11.45,5,21.7
+2024-11-01,Europe,Enabler,61.7,13.91,6,19.6
+2024-11-01,Asia Pacific,Bank,66.7,13.31,7,16.7
+2024-11-01,Asia Pacific,Fintech,73.2,15.27,7,26.4
+2024-11-01,Asia Pacific,Merchant,49.6,9.51,4,9.3
+2024-11-01,Asia Pacific,Enabler,54.8,11.66,7,12.1
+2024-11-01,LAC,Bank,50.2,5.84,5,8.3
+2024-11-01,LAC,Fintech,58.3,7.05,7,11.0
+2024-11-01,LAC,Merchant,29.5,4.38,3,23.9
+2024-11-01,LAC,Enabler,37.9,5.02,5,31.0
+2024-11-01,MEA,Bank,42.9,4.09,6,31.1
+2024-11-01,MEA,Fintech,45.4,4.45,6,20.3
+2024-11-01,MEA,Merchant,31.3,3.26,3,30.0
+2024-11-01,MEA,Enabler,35.0,3.52,4,24.2
+2024-12-01,North America,Bank,90.2,26.22,9,10.1
+2024-12-01,North America,Fintech,100.0,29.49,9,8.5
+2024-12-01,North America,Merchant,59.6,17.63,8,27.9
+2024-12-01,North America,Enabler,76.9,22.1,9,24.0
+2024-12-01,Europe,Bank,76.4,17.18,9,12.7
+2024-12-01,Europe,Fintech,88.2,19.36,10,8.1
+2024-12-01,Europe,Merchant,52.7,12.39,6,11.4
+2024-12-01,Europe,Enabler,65.1,14.49,7,22.5
+2024-12-01,Asia Pacific,Bank,65.7,13.67,8,24.1
+2024-12-01,Asia Pacific,Fintech,79.4,15.95,7,30.6
+2024-12-01,Asia Pacific,Merchant,46.8,9.8,4,31.6
+2024-12-01,Asia Pacific,Enabler,57.5,11.36,5,22.9
+2024-12-01,LAC,Bank,50.2,6.05,6,23.3
+2024-12-01,LAC,Fintech,56.9,6.48,7,19.3
+2024-12-01,LAC,Merchant,34.7,4.05,3,22.0
+2024-12-01,LAC,Enabler,40.9,4.84,6,32.0
+2024-12-01,MEA,Bank,38.8,4.03,5,34.0
+2024-12-01,MEA,Fintech,44.7,5.0,4,31.2
+2024-12-01,MEA,Merchant,28.1,2.39,4,27.8
+2024-12-01,MEA,Enabler,33.6,3.36,4,22.0
+2025-01-01,North America,Bank,90.8,25.41,9,23.4
+2025-01-01,North America,Fintech,99.7,30.14,12,31.4
+2025-01-01,North America,Merchant,59.4,18.05,6,28.1
+2025-01-01,North America,Enabler,74.1,22.75,7,18.2
+2025-01-01,Europe,Bank,80.4,17.21,8,16.6
+2025-01-01,Europe,Fintech,95.1,20.15,9,19.0
+2025-01-01,Europe,Merchant,55.2,11.83,6,13.3
+2025-01-01,Europe,Enabler,65.2,14.67,7,11.5
+2025-01-01,Asia Pacific,Bank,69.1,13.95,7,33.8
+2025-01-01,Asia Pacific,Fintech,76.9,15.51,9,28.3
+2025-01-01,Asia Pacific,Merchant,47.5,9.36,6,13.0
+2025-01-01,Asia Pacific,Enabler,57.1,11.52,6,15.0
+2025-01-01,LAC,Bank,50.4,5.68,5,25.6
+2025-01-01,LAC,Fintech,53.8,6.32,8,14.8
+2025-01-01,LAC,Merchant,34.1,4.11,3,32.3
+2025-01-01,LAC,Enabler,44.1,4.73,6,33.7
+2025-01-01,MEA,Bank,37.7,4.08,6,22.9
+2025-01-01,MEA,Fintech,41.0,4.09,4,24.7
+2025-01-01,MEA,Merchant,26.5,2.64,3,12.3
+2025-01-01,MEA,Enabler,35.9,3.17,3,27.8
+2025-02-01,North America,Bank,89.9,25.95,11,28.5
+2025-02-01,North America,Fintech,100.0,30.95,11,33.4
+2025-02-01,North America,Merchant,65.7,18.21,8,15.1
+2025-02-01,North America,Enabler,73.1,22.12,7,19.2
+2025-02-01,Europe,Bank,78.6,17.18,9,31.0
+2025-02-01,Europe,Fintech,92.3,20.2,11,14.7
+2025-02-01,Europe,Merchant,49.9,11.93,5,32.0
+2025-02-01,Europe,Enabler,64.4,14.64,8,21.2
+2025-02-01,Asia Pacific,Bank,68.6,14.05,9,11.6
+2025-02-01,Asia Pacific,Fintech,79.5,16.2,9,21.0
+2025-02-01,Asia Pacific,Merchant,51.0,9.73,6,13.6
+2025-02-01,Asia Pacific,Enabler,58.1,12.06,7,11.2
+2025-02-01,LAC,Bank,50.7,6.29,7,20.6
+2025-02-01,LAC,Fintech,58.5,6.85,7,13.1
+2025-02-01,LAC,Merchant,28.9,4.29,6,20.7
+2025-02-01,LAC,Enabler,43.4,5.24,6,17.2
+2025-02-01,MEA,Bank,38.8,4.43,4,24.8
+2025-02-01,MEA,Fintech,46.4,4.76,7,13.7
+2025-02-01,MEA,Merchant,28.1,2.48,3,8.1
+2025-02-01,MEA,Enabler,31.3,3.32,5,9.7
+2025-03-01,North America,Bank,91.5,26.61,10,25.1
+2025-03-01,North America,Fintech,100.0,30.88,10,16.6
+2025-03-01,North America,Merchant,60.0,18.75,6,24.2
+2025-03-01,North America,Enabler,76.7,22.65,8,17.3
+2025-03-01,Europe,Bank,78.5,17.71,10,9.1
+2025-03-01,Europe,Fintech,87.3,20.28,11,28.2
+2025-03-01,Europe,Merchant,55.3,12.02,7,16.2
+2025-03-01,Europe,Enabler,69.0,15.34,8,27.9
+2025-03-01,Asia Pacific,Bank,69.2,14.13,7,21.7
+2025-03-01,Asia Pacific,Fintech,80.3,16.43,10,25.5
+2025-03-01,Asia Pacific,Merchant,46.6,9.58,6,11.4
+2025-03-01,Asia Pacific,Enabler,59.4,12.07,7,25.7
+2025-03-01,LAC,Bank,52.1,6.19,7,13.3
+2025-03-01,LAC,Fintech,57.4,6.51,6,14.7
+2025-03-01,LAC,Merchant,33.0,4.22,6,11.7
+2025-03-01,LAC,Enabler,44.1,5.24,4,32.6
+2025-03-01,MEA,Bank,41.3,4.23,5,33.7
+2025-03-01,MEA,Fintech,42.3,4.68,7,24.9
+2025-03-01,MEA,Merchant,30.1,3.16,4,26.5
+2025-03-01,MEA,Enabler,35.2,3.27,5,31.6
+2025-04-01,North America,Bank,92.2,26.62,9,31.1
+2025-04-01,North America,Fintech,100.0,31.2,12,21.2
+2025-04-01,North America,Merchant,62.7,18.32,8,32.6
+2025-04-01,North America,Enabler,77.5,22.38,8,34.4
+2025-04-01,Europe,Bank,76.1,17.56,8,21.0
+2025-04-01,Europe,Fintech,88.0,20.77,11,25.4
+2025-04-01,Europe,Merchant,55.3,12.23,7,19.1
+2025-04-01,Europe,Enabler,69.4,14.77,8,31.2
+2025-04-01,Asia Pacific,Bank,68.6,14.11,7,29.5
+2025-04-01,Asia Pacific,Fintech,83.5,16.27,9,28.9
+2025-04-01,Asia Pacific,Merchant,46.2,9.71,6,13.2
+2025-04-01,Asia Pacific,Enabler,59.6,12.35,8,24.7
+2025-04-01,LAC,Bank,49.8,6.55,6,11.7
+2025-04-01,LAC,Fintech,59.7,7.07,6,31.9
+2025-04-01,LAC,Merchant,34.5,3.81,6,12.8
+2025-04-01,LAC,Enabler,42.6,5.0,7,21.5
+2025-04-01,MEA,Bank,42.4,4.13,4,35.0
+2025-04-01,MEA,Fintech,46.9,5.18,7,27.7
+2025-04-01,MEA,Merchant,30.2,3.19,3,19.5
+2025-04-01,MEA,Enabler,35.7,3.61,5,17.5
+2025-05-01,North America,Bank,92.3,26.58,11,19.2
+2025-05-01,North America,Fintech,100.0,31.58,12,29.6
+2025-05-01,North America,Merchant,60.6,18.61,6,31.7
+2025-05-01,North America,Enabler,79.2,22.72,8,22.4
+2025-05-01,Europe,Bank,77.2,17.88,8,19.8
+2025-05-01,Europe,Fintech,90.9,20.42,9,25.6
+2025-05-01,Europe,Merchant,58.4,12.25,6,31.2
+2025-05-01,Europe,Enabler,65.2,14.93,7,30.1
+2025-05-01,Asia Pacific,Bank,73.2,14.17,8,15.0
+2025-05-01,Asia Pacific,Fintech,81.3,16.39,10,28.3
+2025-05-01,Asia Pacific,Merchant,52.2,9.15,6,13.6
+2025-05-01,Asia Pacific,Enabler,59.6,12.24,6,10.3
+2025-05-01,LAC,Bank,50.6,6.46,5,18.8
+2025-05-01,LAC,Fintech,61.1,7.19,8,25.6
+2025-05-01,LAC,Merchant,36.9,4.3,4,34.3
+2025-05-01,LAC,Enabler,38.5,4.79,7,14.0
+2025-05-01,MEA,Bank,40.3,4.03,5,23.3
+2025-05-01,MEA,Fintech,45.7,5.47,7,27.2
+2025-05-01,MEA,Merchant,27.6,2.73,5,21.1
+2025-05-01,MEA,Enabler,34.5,3.17,5,28.5
+2025-06-01,North America,Bank,88.4,26.94,9,15.3
+2025-06-01,North America,Fintech,100.0,30.96,11,23.2
+2025-06-01,North America,Merchant,61.8,19.0,8,13.7
+2025-06-01,North America,Enabler,76.8,23.1,8,12.6
+2025-06-01,Europe,Bank,79.5,18.33,10,33.3
+2025-06-01,Europe,Fintech,93.5,21.2,10,23.8
+2025-06-01,Europe,Merchant,52.8,12.09,6,10.7
+2025-06-01,Europe,Enabler,64.8,14.97,7,12.8
+2025-06-01,Asia Pacific,Bank,70.7,14.13,7,17.7
+2025-06-01,Asia Pacific,Fintech,80.0,17.21,8,15.1
+2025-06-01,Asia Pacific,Merchant,50.8,9.77,7,33.1
+2025-06-01,Asia Pacific,Enabler,54.7,11.71,8,11.1
+2025-06-01,LAC,Bank,47.2,5.84,6,28.4
+2025-06-01,LAC,Fintech,62.2,7.28,8,34.9
+2025-06-01,LAC,Merchant,34.0,4.45,4,33.6
+2025-06-01,LAC,Enabler,44.9,5.42,5,12.6
+2025-06-01,MEA,Bank,39.1,3.78,6,34.2
+2025-06-01,MEA,Fintech,47.9,4.87,6,23.8
+2025-06-01,MEA,Merchant,28.7,3.03,4,10.8
+2025-06-01,MEA,Enabler,37.5,3.2,4,17.7
+2025-07-01,North America,Bank,91.1,27.68,11,33.0
+2025-07-01,North America,Fintech,100.0,31.52,12,16.9
+2025-07-01,North America,Merchant,65.8,19.4,8,25.8
+2025-07-01,North America,Enabler,76.6,22.97,9,17.3
+2025-07-01,Europe,Bank,80.2,18.52,8,27.5
+2025-07-01,Europe,Fintech,92.9,21.0,9,23.2
+2025-07-01,Europe,Merchant,55.5,12.42,7,33.0
+2025-07-01,Europe,Enabler,69.3,15.4,9,9.4
+2025-07-01,Asia Pacific,Bank,74.3,14.31,7,23.6
+2025-07-01,Asia Pacific,Fintech,82.4,16.47,10,26.4
+2025-07-01,Asia Pacific,Merchant,50.1,9.92,7,31.0
+2025-07-01,Asia Pacific,Enabler,56.4,12.45,8,8.1
+2025-07-01,LAC,Bank,52.6,5.85,8,18.1
+2025-07-01,LAC,Fintech,61.7,7.26,8,12.3
+2025-07-01,LAC,Merchant,35.2,3.69,4,34.1
+2025-07-01,LAC,Enabler,40.9,5.09,6,13.1
+2025-07-01,MEA,Bank,39.7,4.18,6,10.7
+2025-07-01,MEA,Fintech,49.3,5.03,6,23.2
+2025-07-01,MEA,Merchant,23.9,2.58,6,18.0
+2025-07-01,MEA,Enabler,34.5,3.17,5,29.5
+2025-08-01,North America,Bank,91.5,27.68,11,31.6
+2025-08-01,North America,Fintech,100.0,31.91,11,20.5
+2025-08-01,North America,Merchant,66.7,18.85,8,18.2
+2025-08-01,North America,Enabler,75.4,23.39,10,20.5
+2025-08-01,Europe,Bank,81.5,17.64,9,13.1
+2025-08-01,Europe,Fintech,89.6,20.59,9,33.6
+2025-08-01,Europe,Merchant,56.5,12.67,7,10.2
+2025-08-01,Europe,Enabler,69.7,16.15,9,25.1
+2025-08-01,Asia Pacific,Bank,70.3,14.66,9,22.4
+2025-08-01,Asia Pacific,Fintech,80.9,17.45,9,9.1
+2025-08-01,Asia Pacific,Merchant,48.3,10.33,7,9.2
+2025-08-01,Asia Pacific,Enabler,62.0,11.9,9,11.2
+2025-08-01,LAC,Bank,53.9,6.86,8,22.4
+2025-08-01,LAC,Fintech,59.5,7.13,7,18.7
+2025-08-01,LAC,Merchant,35.5,4.63,5,16.4
+2025-08-01,LAC,Enabler,43.6,5.44,7,34.0
+2025-08-01,MEA,Bank,44.6,4.57,5,30.4
+2025-08-01,MEA,Fintech,50.0,4.96,8,33.5
+2025-08-01,MEA,Merchant,29.0,3.01,4,22.7
+2025-08-01,MEA,Enabler,36.1,3.99,5,27.0
+2025-09-01,North America,Bank,87.8,27.65,12,17.8
+2025-09-01,North America,Fintech,100.0,32.39,12,10.1
+2025-09-01,North America,Merchant,65.4,18.93,7,24.5
+2025-09-01,North America,Enabler,78.0,23.62,10,13.6
+2025-09-01,Europe,Bank,85.2,18.43,10,33.3
+2025-09-01,Europe,Fintech,91.1,21.41,11,9.3
+2025-09-01,Europe,Merchant,56.0,12.48,6,23.4
+2025-09-01,Europe,Enabler,69.4,15.64,7,24.9
+2025-09-01,Asia Pacific,Bank,73.4,14.5,10,31.3
+2025-09-01,Asia Pacific,Fintech,86.0,17.29,10,10.4
+2025-09-01,Asia Pacific,Merchant,54.6,10.43,7,18.2
+2025-09-01,Asia Pacific,Enabler,60.8,12.31,9,12.9
+2025-09-01,LAC,Bank,55.6,6.39,6,19.7
+2025-09-01,LAC,Fintech,62.7,7.5,9,12.6
+2025-09-01,LAC,Merchant,36.0,4.11,7,21.4
+2025-09-01,LAC,Enabler,45.1,5.33,5,19.8
+2025-09-01,MEA,Bank,36.3,3.85,6,19.4
+2025-09-01,MEA,Fintech,49.4,4.45,7,14.2
+2025-09-01,MEA,Merchant,28.9,3.01,5,20.7
+2025-09-01,MEA,Enabler,35.1,3.39,7,9.6
+2025-10-01,North America,Bank,95.2,27.91,12,19.6
+2025-10-01,North America,Fintech,100.0,32.93,13,25.0
+2025-10-01,North America,Merchant,68.7,19.45,9,33.9
+2025-10-01,North America,Enabler,78.0,23.78,10,29.9
+2025-10-01,Europe,Bank,82.1,17.99,10,13.8
+2025-10-01,Europe,Fintech,91.1,21.23,11,13.4
+2025-10-01,Europe,Merchant,56.7,12.04,7,15.4
+2025-10-01,Europe,Enabler,73.6,15.11,10,12.2
+2025-10-01,Asia Pacific,Bank,76.3,14.86,8,31.8
+2025-10-01,Asia Pacific,Fintech,84.8,17.23,10,12.7
+2025-10-01,Asia Pacific,Merchant,52.2,9.78,8,15.4
+2025-10-01,Asia Pacific,Enabler,60.4,12.46,7,22.9
+2025-10-01,LAC,Bank,51.0,6.27,7,29.1
+2025-10-01,LAC,Fintech,59.0,7.57,8,20.1
+2025-10-01,LAC,Merchant,35.7,4.23,6,12.8
+2025-10-01,LAC,Enabler,44.5,5.55,7,14.5
+2025-10-01,MEA,Bank,42.4,4.85,5,11.5
+2025-10-01,MEA,Fintech,50.2,5.17,6,18.0
+2025-10-01,MEA,Merchant,26.1,3.01,4,21.4
+2025-10-01,MEA,Enabler,35.3,3.02,7,35.0
+2025-11-01,North America,Bank,89.3,28.06,12,29.4
+2025-11-01,North America,Fintech,100.0,32.82,13,8.4
+2025-11-01,North America,Merchant,61.4,19.66,8,23.3
+2025-11-01,North America,Enabler,82.2,23.45,10,10.9
+2025-11-01,Europe,Bank,80.6,18.72,9,34.9
+2025-11-01,Europe,Fintech,98.3,21.27,12,16.5
+2025-11-01,Europe,Merchant,57.6,12.78,9,33.3
+2025-11-01,Europe,Enabler,66.3,15.41,9,16.0
+2025-11-01,Asia Pacific,Bank,74.2,14.36,10,33.6
+2025-11-01,Asia Pacific,Fintech,83.9,16.7,9,26.4
+2025-11-01,Asia Pacific,Merchant,49.3,10.5,6,15.1
+2025-11-01,Asia Pacific,Enabler,61.3,12.59,9,26.3
+2025-11-01,LAC,Bank,51.2,6.14,8,34.0
+2025-11-01,LAC,Fintech,62.1,7.63,7,19.7
+2025-11-01,LAC,Merchant,37.1,4.38,6,18.2
+2025-11-01,LAC,Enabler,42.4,5.05,8,8.1
+2025-11-01,MEA,Bank,44.9,3.62,7,13.6
+2025-11-01,MEA,Fintech,49.1,5.1,6,10.4
+2025-11-01,MEA,Merchant,29.4,2.48,4,13.1
+2025-11-01,MEA,Enabler,34.3,3.49,6,20.9
+2025-12-01,North America,Bank,92.6,28.27,12,34.5
+2025-12-01,North America,Fintech,100.0,32.77,13,32.9
+2025-12-01,North America,Merchant,69.2,19.29,8,10.6
+2025-12-01,North America,Enabler,83.3,23.54,11,13.0
+2025-12-01,Europe,Bank,85.8,18.78,9,32.5
+2025-12-01,Europe,Fintech,95.1,21.58,12,15.4
+2025-12-01,Europe,Merchant,57.5,12.92,7,18.9
+2025-12-01,Europe,Enabler,76.2,15.23,10,18.8
+2025-12-01,Asia Pacific,Bank,72.4,15.1,10,29.1
+2025-12-01,Asia Pacific,Fintech,87.6,17.28,10,31.0
+2025-12-01,Asia Pacific,Merchant,46.5,10.81,7,31.4
+2025-12-01,Asia Pacific,Enabler,60.1,12.38,7,28.5
+2025-12-01,LAC,Bank,53.8,6.55,7,27.7
+2025-12-01,LAC,Fintech,64.1,7.46,9,22.2
+2025-12-01,LAC,Merchant,34.4,4.63,5,15.8
+2025-12-01,LAC,Enabler,46.9,5.02,8,21.6
+2025-12-01,MEA,Bank,42.9,4.66,8,29.2
+2025-12-01,MEA,Fintech,48.7,5.35,7,27.9
+2025-12-01,MEA,Merchant,29.1,2.91,6,29.5
+2025-12-01,MEA,Enabler,32.9,3.87,5,32.8

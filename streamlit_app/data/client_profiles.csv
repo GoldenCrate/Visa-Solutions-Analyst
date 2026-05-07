@@ -1,0 +1,81 @@
+client_name,client_type,region,current_settlement,annual_volume_bn,tech_readiness,compliance_readiness,integration_complexity,time_to_live_months
+First National Bank,Bank,North America,Traditional,40.5,41.8,71.0,High,23
+Pacific Commerce Bank,Bank,Asia Pacific,Exploring,64.1,55.0,74.8,Medium,11
+Summit Financial,Bank,Asia Pacific,Partial Crypto,30.3,60.4,69.7,Medium,21
+Atlas Bank,Bank,MEA,Traditional,58.4,51.6,57.0,Medium,20
+Meridian Trust,Bank,Asia Pacific,Exploring,7.3,62.7,66.6,Medium,4
+Apex Bank,Bank,MEA,Traditional,61.0,36.1,58.2,High,4
+Harbor Financial,Bank,Asia Pacific,Exploring,22.3,49.4,95.7,Low,14
+Crestview Bank,Bank,Asia Pacific,Traditional,44.9,56.7,48.7,Medium,17
+Pinnacle National,Bank,North America,Partial Crypto,65.9,67.3,70.4,Medium,16
+Sterling Bank,Bank,North America,Traditional,74.1,42.8,73.3,Medium,5
+Nova Bank,Bank,Europe,Traditional,10.3,67.6,58.0,High,7
+Cascade Financial,Bank,North America,Exploring,63.1,43.7,66.7,Medium,5
+Ironclad Bank,Bank,Europe,Traditional,38.6,52.4,57.6,Medium,16
+Solaris Trust,Bank,North America,Exploring,16.5,45.2,73.1,Low,6
+Keystone Bank,Bank,LAC,Traditional,10.8,63.1,64.3,High,9
+Glacier Bank,Bank,LAC,Traditional,27.1,45.7,65.8,Medium,7
+Horizon National,Bank,Europe,Partial Crypto,51.8,75.5,94.7,Low,14
+Cobalt Financial,Bank,LAC,Traditional,38.5,47.4,61.4,Medium,17
+Ember Bank,Bank,MEA,Partial Crypto,22.8,44.0,100.0,High,7
+Prism Trust,Bank,North America,Traditional,51.5,39.5,89.1,High,18
+PaySwift,Fintech,MEA,Traditional,1.5,64.5,72.6,Medium,14
+NovaPay,Fintech,Asia Pacific,Traditional,14.5,86.3,70.1,Medium,22
+FluxFinance,Fintech,Asia Pacific,Partial Crypto,6.8,58.1,57.9,High,7
+ArcPay,Fintech,LAC,Partial Crypto,14.1,74.1,56.5,Low,3
+ZenithWallet,Fintech,North America,Exploring,11.5,74.3,53.9,Low,9
+ClearStream,Fintech,MEA,Traditional,15.0,78.5,67.6,Low,13
+Orbit Payments,Fintech,Europe,Partial Crypto,14.9,80.0,53.4,High,8
+Nexus Pay,Fintech,Europe,Exploring,3.5,52.7,65.7,Medium,16
+Pulse Finance,Fintech,Europe,Partial Crypto,14.8,88.3,73.6,High,9
+Axiom Pay,Fintech,MEA,Partial Crypto,8.6,64.6,62.1,Medium,8
+Luminary Payments,Fintech,Asia Pacific,Traditional,5.3,95.7,49.0,Low,11
+Catalyst Finance,Fintech,Asia Pacific,Traditional,11.5,62.3,37.6,Medium,20
+Vertex Pay,Fintech,MEA,Traditional,4.5,70.3,60.3,Low,9
+Echo Payments,Fintech,MEA,Traditional,2.8,76.0,68.4,Medium,15
+Quantum Wallet,Fintech,LAC,Traditional,13.4,95.0,68.2,Low,12
+Beacon Finance,Fintech,Asia Pacific,Partial Crypto,3.4,73.6,60.4,Medium,21
+Prism Pay,Fintech,North America,Traditional,4.9,65.2,39.7,Medium,15
+Stellar Payments,Fintech,LAC,Traditional,10.8,86.7,72.2,Low,7
+Forge Finance,Fintech,Asia Pacific,Traditional,12.3,65.2,60.0,Medium,16
+Summit Pay,Fintech,MEA,Traditional,1.1,64.4,36.4,Low,12
+NovaMart,Merchant,North America,Exploring,37.1,42.6,39.2,Low,11
+Apex Digital,Merchant,Asia Pacific,Exploring,1.5,55.4,38.4,High,3
+TechDirect,Merchant,North America,Partial Crypto,4.0,38.6,55.1,High,22
+GlobalShop,Merchant,MEA,Traditional,7.0,40.6,60.3,Medium,15
+SwiftRetail,Merchant,LAC,Exploring,20.9,24.9,61.3,Medium,18
+PrimeCommerce,Merchant,North America,Exploring,9.6,58.4,57.3,Medium,18
+EclipseStore,Merchant,Asia Pacific,Traditional,15.7,31.8,66.0,High,18
+Horizon Retail,Merchant,Asia Pacific,Traditional,28.0,32.7,50.9,High,15
+Solaris Shop,Merchant,Asia Pacific,Partial Crypto,3.8,39.0,40.9,Medium,4
+Crestview Commerce,Merchant,North America,Traditional,21.3,26.7,43.5,High,8
+Nexus Retail,Merchant,MEA,Traditional,35.5,44.6,44.1,Medium,23
+Atlas Store,Merchant,Europe,Traditional,12.2,39.2,54.9,Low,6
+Luminary Market,Merchant,LAC,Traditional,2.2,45.2,46.9,Medium,11
+Cascade Commerce,Merchant,Europe,Traditional,10.7,25.3,52.2,Medium,16
+Ironclad Retail,Merchant,LAC,Partial Crypto,24.1,48.4,47.5,Low,20
+Zenith Market,Merchant,LAC,Traditional,31.5,38.3,36.4,High,10
+Forge Store,Merchant,MEA,Exploring,31.7,49.1,53.9,Medium,15
+Cobalt Commerce,Merchant,MEA,Traditional,22.3,42.6,43.3,Low,23
+Ember Retail,Merchant,North America,Traditional,33.9,46.9,38.9,Medium,23
+Beacon Market,Merchant,North America,Partial Crypto,37.9,55.9,49.9,Low,23
+ChainBridge,Enabler,North America,Traditional,13.6,77.0,64.8,High,4
+RailForge,Enabler,MEA,Traditional,8.4,54.0,45.3,High,13
+SettleCore,Enabler,Europe,Traditional,8.9,85.7,55.1,Low,14
+ConnectRails,Enabler,Asia Pacific,Traditional,17.5,64.4,70.0,Low,7
+NexusGateway,Enabler,Asia Pacific,Partial Crypto,10.3,93.0,52.4,High,10
+PrismBridge,Enabler,Europe,Traditional,2.9,71.2,48.8,Medium,7
+OrbitalSettlement,Enabler,MEA,Partial Crypto,23.5,74.4,65.8,Medium,8
+ClearRails,Enabler,Asia Pacific,Partial Crypto,5.7,52.6,77.2,Medium,17
+VertexGateway,Enabler,LAC,Traditional,23.3,81.6,59.7,Low,6
+ApexBridge,Enabler,MEA,Traditional,2.8,46.3,57.4,Low,5
+LuminaryRails,Enabler,MEA,Traditional,9.5,70.6,38.4,Low,10
+CatalystGateway,Enabler,Europe,Partial Crypto,23.4,71.9,70.2,Medium,7
+ForgeConnect,Enabler,MEA,Traditional,21.4,75.6,62.0,High,9
+ZenithBridge,Enabler,North America,Exploring,23.4,79.4,68.7,Low,19
+BeaconRails,Enabler,Asia Pacific,Partial Crypto,2.8,49.4,52.9,High,19
+EchoGateway,Enabler,MEA,Traditional,8.3,57.4,52.0,Medium,15
+SolarisConnect,Enabler,LAC,Traditional,11.8,72.4,64.9,High,12
+IroncladBridge,Enabler,MEA,Traditional,13.6,79.3,65.6,Medium,21
+CascadeRails,Enabler,Europe,Exploring,15.0,72.3,82.1,Medium,13
+HorizonGateway,Enabler,MEA,Traditional,24.3,98.1,56.2,High,8
