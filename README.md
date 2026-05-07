@@ -1,6 +1,6 @@
 # Visa Stablecoin Solutions Analyst
 
-This project models the analytical and client-facing work performed by a Solutions Analyst on Visa's Crypto Solutions team. It synthesises 560 rows of synthetic data across 80 client profiles and 480 market observations to surface stablecoin adoption trends, client readiness scores, settlement economics, and AI-generated pre-sales pitches. **The centrepiece is a Claude-powered GTM Pitch Generator — the kind of tool a solutions analyst uses before walking into a client meeting with a bank, fintech, or merchant.** Rather than a generic output, **Claude reads each client's actual data — their readiness score, identified gaps, annual settlement volume, and estimated savings — and generates a custom-tailored 3-bullet pre-sales pitch and objection handler specific to that client's situation.**
+This project models the analytical and client-facing work performed by a Solutions Analyst on Visa's Crypto Solutions team. It synthesises 560 rows of synthetic data across 80 client profiles and 480 market observations to surface stablecoin adoption trends, client readiness scores, settlement economics, and AI-generated pre-sales pitches. **The centrepiece is a Claude-powered GTM Pitch Generator — the kind of tool a solutions analyst uses before walking into a client meeting with a bank, fintech, or merchant.** Rather than a generic output, **Claude reads each client's actual data — their readiness score, identified gaps, annual settlement volume, and estimated savings — and generates a custom-tailored 3-bullet pre-sales pitch and objection handler specific to that client's situation. After the pitch is generated, an interactive Q&A chat lets you ask Claude follow-up questions about the client or pitch — grounded in that client's context, not generic advice.**
 
 ## Live Dashboard
 
@@ -20,7 +20,7 @@ This project directly demonstrates the role's core responsibilities: client stab
 | Data | Synthesized CSVs — Python generator script |
 | Data Processing | Pandas |
 | Scoring Models | Python pure functions (`compute_readiness_score`, `compute_settlement_economics`) |
-| AI Pitch Generator | Anthropic Claude API (claude-haiku-4-5) |
+| AI Pitch Generator + Q&A Chat | Anthropic Claude API (claude-haiku-4-5), multi-turn conversation |
 | Visualisation | Altair |
 | Dashboard | Streamlit (four-page multipage app) |
 | Testing | pytest (23 unit tests) |
@@ -34,7 +34,7 @@ This project directly demonstrates the role's core responsibilities: client stab
 
 **Page 3 — Settlement Economics:** The CFO business case. Models USDC rail costs vs traditional correspondent banking across 5 global regions. Inputs: annual settlement volume, region, integration complexity. Outputs: annual savings, implementation cost, payback period, and a 5-year cumulative savings schedule.
 
-**Page 4 — GTM Playbook & AI Pitch Generator:** The standout feature. Select any client and Claude AI generates a tailored 3-bullet pre-sales pitch based on their readiness tier, identified gaps, and savings potential — plus the top objection to anticipate. Below the pitch generator: a full client prioritization matrix (readiness vs. volume) with quadrant reference lines to identify highest-priority targets, and a tier-based GTM approach guide.
+**Page 4 — GTM Playbook & AI Pitch Generator:** The standout feature. Select any client and Claude AI generates a tailored 3-bullet pre-sales pitch based on their readiness tier, identified gaps, and savings potential — plus the top objection to anticipate. After the pitch is generated, an **interactive Q&A chat** lets you ask follow-up questions grounded in that client's context (e.g. *"How do I handle it if they mention a competitor?"* or *"What should my next steps be after this meeting?"*). Below the pitch: a full client prioritization matrix (readiness vs. volume) with quadrant reference lines to identify highest-priority targets, and a tier-based GTM approach guide.
 
 ## JD Alignment
 
@@ -44,7 +44,7 @@ This project directly demonstrates the role's core responsibilities: client stab
 | Support pre-sales preparation and sales materials | Page 4 — AI Pitch Generator |
 | Help shape Go-To-Market strategy globally | Page 4 — Prioritization matrix + tier playbook |
 | Subject matter expertise in stablecoins/blockchain | Pages 1 & 3 — USDC adoption data + settlement rail economics |
-| Acumen with AI tooling for research and prototyping | Page 4 — Live Claude API integration |
+| Acumen with AI tooling for research and prototyping | Page 4 — Live Claude API integration with interactive Q&A chat |
 
 ## Key Insights
 
@@ -92,7 +92,7 @@ ANTHROPIC_API_KEY = "sk-ant-..."
     │   │   ├── data_loader.py             # Cached CSV loaders
     │   │   ├── readiness_score.py         # compute_readiness_score() pure function
     │   │   ├── settlement_model.py        # compute_settlement_economics() pure function
-    │   │   └── gtm_pitch.py              # generate_gtm_pitch() — Claude API call
+    │   │   └── gtm_pitch.py              # generate_gtm_pitch() + answer_followup() — Claude API
     │   ├── data/
     │   │   ├── market_landscape.csv       # 480 rows — monthly adoption by region/client type
     │   │   └── client_profiles.csv        # 80 rows — synthetic client profiles
