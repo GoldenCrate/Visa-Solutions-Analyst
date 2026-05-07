@@ -77,3 +77,24 @@ OBJECTION: [objection and response]"""
             top_objection = line.replace("OBJECTION:", "").strip()
 
     return {"pitch_bullets": pitch_bullets[:3], "top_objection": top_objection}
+
+
+def answer_followup(
+    system_context: str,
+    chat_history: list[dict],
+    user_question: str,
+) -> str:
+    """
+    Answer a follow-up question about a generated pitch.
+    system_context: the client + pitch context built when the pitch was generated.
+    chat_history: list of {"role": "user"/"assistant", "content": str} dicts.
+    """
+    client = anthropic.Anthropic(api_key=_get_api_key())
+    messages = chat_history + [{"role": "user", "content": user_question}]
+    response = client.messages.create(
+        model="claude-haiku-4-5-20251001",
+        max_tokens=500,
+        system=system_context,
+        messages=messages,
+    )
+    return response.content[0].text.strip()
