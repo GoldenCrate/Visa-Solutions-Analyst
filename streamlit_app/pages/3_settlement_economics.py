@@ -43,16 +43,16 @@ with left:
     ])
     bar = (
         alt.Chart(cost_df)
-        .mark_bar(width=80)
+        .mark_bar()
         .encode(
-            x=alt.X("Rail:N", title=None),
-            y=alt.Y("Cost (bps):Q", title="Settlement Cost (bps)"),
+            y=alt.Y("Rail:N", title=None, sort=["Traditional", "USDC"]),
+            x=alt.X("Cost (bps):Q", title="Settlement Cost (bps)"),
             color=alt.Color("Rail:N", scale=alt.Scale(
                 domain=["Traditional", "USDC"], range=["#c0392b", "#1a7a4a"]
             ), legend=None),
             tooltip=["Rail:N", alt.Tooltip("Cost (bps):Q", format=".1f")],
         )
-        .properties(height=280)
+        .properties(height=160)
     )
     st.altair_chart(bar, use_container_width=True)
 
@@ -88,15 +88,15 @@ bench_chart = (
     alt.Chart(bench_df)
     .mark_bar()
     .encode(
-        x=alt.X("Region:N", title="Region"),
-        y=alt.Y("Cost (bps):Q", title="Settlement Cost (bps)"),
+        y=alt.Y("Region:N", title="Region", sort=["North America", "Europe", "Asia Pacific", "LAC", "MEA"]),
+        x=alt.X("Cost (bps):Q", title="Settlement Cost (bps)"),
         color=alt.Color("Rail:N", scale=alt.Scale(
             domain=["Traditional", "USDC"], range=["#c0392b", "#1a7a4a"]
         )),
-        xOffset="Rail:N",
+        yOffset="Rail:N",
         tooltip=["Region:N", "Rail:N", alt.Tooltip("Cost (bps):Q", format=".1f")],
     )
-    .properties(height=280)
+    .properties(height=300)
 )
 st.altair_chart(bench_chart, use_container_width=True)
 st.caption("Traditional costs: correspondent banking averages. USDC costs: on-chain settlement estimates. Implementation costs: Low=$150K, Medium=$400K, High=$900K.")
