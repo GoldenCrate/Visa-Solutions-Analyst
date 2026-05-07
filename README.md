@@ -36,6 +36,14 @@ This project directly demonstrates the role's core responsibilities: client stab
 
 **Page 4 — GTM Playbook & AI Pitch Generator:** The standout feature. Select any client and Claude AI generates a tailored 3-bullet pre-sales pitch based on their readiness tier, identified gaps, and savings potential — plus the top objection to anticipate. After the pitch is generated, an **interactive Q&A chat** lets you ask follow-up questions grounded in that client's context (e.g. *"How do I handle it if they mention a competitor?"* or *"What should my next steps be after this meeting?"*). Below the pitch: a full client prioritization matrix (readiness vs. volume) with quadrant reference lines to identify highest-priority targets, and a tier-based GTM approach guide.
 
+## Dashboard Preview
+
+### Market Landscape
+![Market Landscape](docs/market-landscape.png)
+
+### GTM Playbook & AI Pitch Generator
+![GTM Playbook](docs/gtm-playbook.png)
+
 ## JD Alignment
 
 | Job Description Requirement | Project Feature |
