@@ -6,6 +6,15 @@ from utils.readiness_score import compute_readiness_score
 from utils.settlement_model import compute_settlement_economics
 from utils.gtm_pitch import generate_gtm_pitch, answer_followup
 
+COLORS = {
+    "navy":  "#1e3a5f",
+    "blue":  "#2563eb",
+    "grey":  "#9ca3af",
+    "red":   "#dc2626",
+    "amber": "#d97706",
+    "green": "#16a34a",
+}
+
 st.set_page_config(page_title="GTM Playbook", layout="wide")
 st.title("GTM Playbook & AI Pitch Generator")
 st.caption("Generate a client-tailored pre-sales pitch with Claude AI, then explore the full client prioritization matrix below.")
@@ -156,20 +165,25 @@ st.caption("Powered by Claude Haiku via the Anthropic API. Each generation uses 
 st.divider()
 
 # ── Segment prioritization matrix ─────────────────────────────────────────────
-st.subheader("Client Segment Prioritization Matrix")
-st.markdown("Clients scored by readiness and annual settlement volume — the two variables that determine GTM priority.")
+st.markdown("### Ready Fintechs in North America Are the Highest-Priority Targets — Shortest Path to Commercial Close")
+st.caption("Top-right quadrant = act now. Bottom-left = nurture. Do not pursue Early Stage clients this quarter.")
 
+st.markdown("### Navy Clients Are Immediate Priorities — High Readiness and Large Settlement Volumes")
+st.caption("Navy = act now (top-right quadrant). Grey = developing pipeline. Amber lines = priority thresholds.")
+
+median_vol = scored_df["Volume_B"].median()
 priority_matrix = (
     alt.Chart(scored_df)
     .mark_circle()
     .encode(
-        x=alt.X("Readiness_Score:Q", scale=alt.Scale(domain=[0, 100]), title="Readiness Score"),
-        y=alt.Y("Volume_B:Q", title="Annual Settlement Volume ($B)"),
-        size=alt.Size("Savings_M:Q", legend=alt.Legend(title="Annual Savings ($M)"), scale=alt.Scale(range=[40, 600])),
-        color=alt.Color("Tier:N", scale=alt.Scale(
-            domain=["Ready", "Developing", "Early Stage"],
-            range=["#1a7a4a", "#d4850a", "#c0392b"]
-        )),
+        x=alt.X("Readiness_Score:Q", scale=alt.Scale(domain=[0, 100]), title="Readiness Score", axis=alt.Axis(grid=False)),
+        y=alt.Y("Volume_B:Q", title="Annual Settlement Volume ($B)", axis=alt.Axis(grid=False)),
+        size=alt.Size("Savings_M:Q", legend=None, scale=alt.Scale(range=[40, 600])),
+        color=alt.condition(
+            (alt.datum.Readiness_Score >= 70) & (alt.datum.Volume_B >= median_vol),
+            alt.value(COLORS["navy"]),
+            alt.value(COLORS["grey"])
+        ),
         shape=alt.Shape("Type:N"),
         tooltip=[
             "Client:N", "Type:N", "Region:N",
@@ -183,11 +197,10 @@ priority_matrix = (
     .properties(height=400)
     .interactive()
 )
-
-vline = alt.Chart(pd.DataFrame({"x": [70]})).mark_rule(strokeDash=[6, 3], color="#888").encode(x="x:Q")
-hline = alt.Chart(pd.DataFrame({"y": [scored_df["Volume_B"].median()]})).mark_rule(strokeDash=[6, 3], color="#888").encode(y="y:Q")
-st.altair_chart(priority_matrix + vline + hline, use_container_width=True)
-st.caption("Top-right quadrant = highest priority: Ready clients with large settlement volumes. Dashed lines: readiness threshold (70) and median volume.")
+vline = alt.Chart(pd.DataFrame({"x": [70]})).mark_rule(strokeDash=[6, 3], color=COLORS["amber"]).encode(x="x:Q")
+hline = alt.Chart(pd.DataFrame({"y": [median_vol]})).mark_rule(strokeDash=[6, 3], color=COLORS["amber"]).encode(y="y:Q")
+priority_chart = (priority_matrix + vline + hline).configure_view(strokeWidth=0)
+st.altair_chart(priority_chart, use_container_width=True)
 
 st.divider()
 
