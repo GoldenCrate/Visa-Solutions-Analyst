@@ -4,6 +4,21 @@ import pandas as pd
 from utils.data_loader import load_clients
 from utils.readiness_score import compute_readiness_score
 
+COLORS = {
+    "navy":  "#1e3a5f",
+    "blue":  "#2563eb",
+    "grey":  "#9ca3af",
+    "red":   "#dc2626",
+    "amber": "#d97706",
+    "green": "#16a34a",
+}
+
+TIER_COLORS = {
+    "Ready":       COLORS["blue"],
+    "Developing":  COLORS["grey"],
+    "Early Stage": COLORS["grey"],
+}
+
 st.set_page_config(page_title="Client Readiness Assessment", layout="wide")
 st.title("Client Readiness Assessment")
 st.caption("Score a client's readiness to adopt Visa USDC settlement rails — the pre-sales solutioning tool a solutions analyst uses before every client meeting.")
@@ -51,9 +66,12 @@ if mode == "Browse existing clients":
     k3.metric("Developing", len(result_df[result_df["Tier"] == "Developing"]))
     k4.metric("Early Stage", len(result_df[result_df["Tier"] == "Early Stage"]))
 
+    st.markdown("### Only 28% of Clients Are Ready — Banks Lead on Compliance, Fintechs Lead on Technology")
+    st.caption("The Developing clients represent the near-term pipeline — prioritise those closest to score 70.")
+
     st.subheader("Client Readiness Scorecard")
 
-    TIER_COLOR = {"Ready": "#1a7a4a", "Developing": "#d4850a", "Early Stage": "#c0392b"}
+    TIER_COLOR = {"Ready": COLORS["green"], "Developing": COLORS["amber"], "Early Stage": COLORS["red"]}
 
     def color_tier(val):
         return f"color: {TIER_COLOR.get(val, 'black')}; font-weight: bold"
@@ -64,27 +82,31 @@ if mode == "Browse existing clients":
     st.dataframe(styled, use_container_width=True, height=380)
 
     # ── Score distribution ─────────────────────────────────────────────────────
-    st.subheader("Score Distribution by Client Type")
+    st.markdown("### Ready Clients (Blue) Cluster at the Top — Fintechs and Banks Lead")
+    st.caption("Grey points = Developing or Early Stage — the pipeline to build toward readiness.")
     scatter = (
         alt.Chart(result_df)
         .mark_circle(size=90)
         .encode(
-            x=alt.X("Type:N", title="Client Type"),
-            y=alt.Y("Score:Q", title="Readiness Score", scale=alt.Scale(domain=[0, 100])),
-            color=alt.Color("Tier:N", scale=alt.Scale(
-                domain=["Ready", "Developing", "Early Stage"],
-                range=["#1a7a4a", "#d4850a", "#c0392b"]
-            )),
+            x=alt.X("Type:N", title="Client Type", axis=alt.Axis(grid=False)),
+            y=alt.Y("Score:Q", title="Readiness Score", scale=alt.Scale(domain=[0, 100]), axis=alt.Axis(grid=False)),
+            color=alt.condition(
+                alt.datum.Tier == "Ready",
+                alt.value(COLORS["blue"]),
+                alt.value(COLORS["grey"])
+            ),
             tooltip=["Client:N", "Type:N", "Region:N",
                      alt.Tooltip("Score:Q", format=".1f"), "Tier:N",
                      alt.Tooltip("Volume_B:Q", title="Volume ($B)", format="$.1f")],
         )
         .properties(height=300)
+        .configure_view(strokeWidth=0)
     )
     st.altair_chart(scatter, use_container_width=True)
 
 else:
-    st.subheader("Manual Client Assessment")
+    st.markdown("### Score Any Client in Real Time — Adjust Discovery Call Inputs")
+    st.caption("Move tech readiness or compliance sliders to see the biggest impact on overall score.")
     st.info("Enter discovery-call details below to generate a readiness score in real time.")
 
     c1, c2 = st.columns(2)
@@ -104,7 +126,7 @@ else:
     result = compute_readiness_score(tech, compliance, complexity, settlement)
     score, tier, gaps, subscores = result["score"], result["tier"], result["gaps"], result["subscores"]
 
-    TIER_COLOR = {"Ready": "#1a7a4a", "Developing": "#d4850a", "Early Stage": "#c0392b"}
+    TIER_COLOR = {"Ready": COLORS["green"], "Developing": COLORS["amber"], "Early Stage": COLORS["red"]}
     color = TIER_COLOR[tier]
 
     st.divider()
@@ -118,19 +140,20 @@ else:
         alt.Chart(sub_df)
         .mark_bar()
         .encode(
-            x=alt.X("Score:Q", scale=alt.Scale(domain=[0, 100])),
-            y=alt.Y("Component:N", sort="-x"),
+            x=alt.X("Score:Q", scale=alt.Scale(domain=[0, 100]), axis=alt.Axis(grid=False)),
+            y=alt.Y("Component:N", sort="-x", axis=alt.Axis(grid=False)),
             color=alt.condition(
                 alt.datum.Score >= 65,
-                alt.value("#1a7a4a"),
-                alt.value("#c0392b"),
+                alt.value(COLORS["green"]),
+                alt.value(COLORS["red"]),
             ),
             tooltip=["Component:N", "Score:Q", "Weight:N"],
         )
         .properties(height=180)
+        .configure_view(strokeWidth=0)
     )
     st.altair_chart(bar, use_container_width=True)
 
-    st.subheader("Identified Gaps")
+    st.markdown("### Identified Gaps — Address These Before Pitching USDC Rails")
     for gap in gaps:
         st.warning(gap) if "No critical" not in gap else st.success(gap)
