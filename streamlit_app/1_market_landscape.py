@@ -2,6 +2,15 @@ import streamlit as st
 import altair as alt
 from utils.data_loader import load_market
 
+COLORS = {
+    "navy":  "#1e3a5f",
+    "blue":  "#2563eb",
+    "grey":  "#9ca3af",
+    "red":   "#dc2626",
+    "amber": "#d97706",
+    "green": "#16a34a",
+}
+
 st.set_page_config(page_title="Stablecoin Market Landscape", layout="wide")
 st.title("Stablecoin Market Landscape")
 st.caption("Global USDC adoption trends across client segments and regions — the market context a solutions analyst brings into every client conversation.")
@@ -43,52 +52,69 @@ k4.metric("Avg YoY Growth", f"{avg_growth:.1f}%")
 
 st.divider()
 
+st.markdown("### North America Leads USDC Volume but MEA Shows the Fastest Year-on-Year Growth")
+st.caption("Two different GTM stories: defend the North America lead, invest early in MEA infrastructure.")
+
 # ── Adoption index trend by region ────────────────────────────────────────────
-st.subheader("Adoption Index by Region (24-Month Trend)")
+st.markdown("### MEA and North America Show the Strongest Adoption Index Growth Across All Regions")
+st.caption("Blue lines = priority regions (North America + MEA). Grey = monitor. Use filters to isolate.")
 trend = filtered.groupby(["month", "region"])["adoption_index"].mean().reset_index()
 chart = (
     alt.Chart(trend)
     .mark_line(point=True)
     .encode(
-        x=alt.X("month:T", title="Month"),
-        y=alt.Y("adoption_index:Q", title="Adoption Index (0-100)", scale=alt.Scale(zero=False)),
-        color=alt.Color("region:N", legend=alt.Legend(title="Region")),
+        x=alt.X("month:T", title="Month", axis=alt.Axis(grid=False)),
+        y=alt.Y("adoption_index:Q", title="Adoption Index (0-100)", scale=alt.Scale(zero=False), axis=alt.Axis(grid=False)),
+        color=alt.condition(
+            (alt.datum.region == "North America") | (alt.datum.region == "MEA"),
+            alt.value(COLORS["blue"]),
+            alt.value(COLORS["grey"])
+        ),
         tooltip=["month:T", "region:N", alt.Tooltip("adoption_index:Q", format=".1f")],
     )
     .properties(height=320)
     .interactive()
+    .configure_view(strokeWidth=0)
 )
 st.altair_chart(chart, use_container_width=True)
 
 # ── USDC volume heatmap ───────────────────────────────────────────────────────
-st.subheader("USDC Volume by Client Type and Region (Latest Month)")
+st.markdown("### Banks and Central Banks Generate the Most USDC Volume — North America Dominates")
+st.caption("Heatmap intensity = transaction volume ($B). Darker blue = more volume in that segment-region pair.")
 heat_data = latest.groupby(["client_type", "region"])["usdc_volume_bn"].sum().reset_index()
 heatmap = (
     alt.Chart(heat_data)
     .mark_rect()
     .encode(
-        x=alt.X("region:N", title="Region"),
-        y=alt.Y("client_type:N", title="Client Type"),
+        x=alt.X("region:N", title=None, axis=alt.Axis(grid=False)),
+        y=alt.Y("client_type:N", title=None, axis=alt.Axis(grid=False)),
         color=alt.Color("usdc_volume_bn:Q", scale=alt.Scale(scheme="blues"), legend=alt.Legend(title="Volume ($B)")),
         tooltip=["client_type:N", "region:N", alt.Tooltip("usdc_volume_bn:Q", format="$.2f", title="Volume ($B)")],
     )
     .properties(height=220)
+    .configure_view(strokeWidth=0)
 )
 st.altair_chart(heatmap, use_container_width=True)
 
 # ── Growth by client type ─────────────────────────────────────────────────────
-st.subheader("YoY Growth by Client Type")
+st.markdown("### All Client Types Are Growing Double-Digits — Fintechs Lead YoY Expansion")
+st.caption("YoY growth across all segments confirms market momentum — prioritise highest-growth segments for outreach.")
+growth_data = latest.groupby("client_type")["yoy_growth_pct"].mean().reset_index()
 growth_bar = (
-    alt.Chart(latest.groupby("client_type")["yoy_growth_pct"].mean().reset_index())
-    .mark_bar()
+    alt.Chart(growth_data)
+    .mark_bar(color=COLORS["navy"])
     .encode(
-        x=alt.X("client_type:N", title="Client Type", sort="-y"),
-        y=alt.Y("yoy_growth_pct:Q", title="Avg YoY Growth (%)"),
-        color=alt.Color("client_type:N", legend=None),
+        x=alt.X("client_type:N", title="Client Type", sort="-y", axis=alt.Axis(grid=False)),
+        y=alt.Y("yoy_growth_pct:Q", title="Avg YoY Growth (%)", axis=alt.Axis(grid=False)),
         tooltip=["client_type:N", alt.Tooltip("yoy_growth_pct:Q", format=".1f", title="Growth (%)")],
     )
     .properties(height=240)
 )
+growth_labels = growth_bar.mark_text(dy=-6, fontSize=11).encode(
+    text=alt.Text("yoy_growth_pct:Q", format=".1f"),
+    color=alt.value(COLORS["navy"])
+)
+growth_bar = (growth_bar + growth_labels).configure_view(strokeWidth=0)
 st.altair_chart(growth_bar, use_container_width=True)
 
 st.caption("Data: Synthetic dataset modelling global stablecoin adoption patterns. Generated for portfolio demonstration.")
