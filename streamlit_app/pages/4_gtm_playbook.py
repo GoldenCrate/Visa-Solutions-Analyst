@@ -167,9 +167,7 @@ st.divider()
 # ── Segment prioritization matrix ─────────────────────────────────────────────
 st.markdown("### Ready Fintechs in North America Are the Highest-Priority Targets — Shortest Path to Commercial Close")
 st.caption("Top-right quadrant = act now. Bottom-left = nurture. Do not pursue Early Stage clients this quarter.")
-
-st.markdown("### Navy Clients Are Immediate Priorities — High Readiness and Large Settlement Volumes")
-st.caption("Navy = act now (top-right quadrant). Grey = developing pipeline. Amber lines = priority thresholds.")
+st.markdown("**Navy = immediate priority** (readiness ≥ 70, volume ≥ median). Grey = developing pipeline. Amber lines = priority thresholds. Bubble size = estimated annual savings ($M).")
 
 median_vol = scored_df["Volume_B"].median()
 priority_matrix = (
