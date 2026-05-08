@@ -13,10 +13,10 @@ COLORS = {
     "green": "#16a34a",
 }
 
-TIER_COLORS = {
-    "Ready":       COLORS["blue"],
-    "Developing":  COLORS["grey"],
-    "Early Stage": COLORS["grey"],
+TIER_COLOR = {
+    "Ready":       COLORS["green"],
+    "Developing":  COLORS["amber"],
+    "Early Stage": COLORS["red"],
 }
 
 st.set_page_config(page_title="Client Readiness Assessment", layout="wide")
@@ -71,8 +71,6 @@ if mode == "Browse existing clients":
 
     st.subheader("Client Readiness Scorecard")
 
-    TIER_COLOR = {"Ready": COLORS["green"], "Developing": COLORS["amber"], "Early Stage": COLORS["red"]}
-
     def color_tier(val):
         return f"color: {TIER_COLOR.get(val, 'black')}; font-weight: bold"
 
@@ -126,7 +124,6 @@ else:
     result = compute_readiness_score(tech, compliance, complexity, settlement)
     score, tier, gaps, subscores = result["score"], result["tier"], result["gaps"], result["subscores"]
 
-    TIER_COLOR = {"Ready": COLORS["green"], "Developing": COLORS["amber"], "Early Stage": COLORS["red"]}
     color = TIER_COLOR[tier]
 
     st.divider()
