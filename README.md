@@ -1,10 +1,15 @@
 # Visa Stablecoin Solutions Analyst
 
-This project models the analytical and client-facing work performed by a Solutions Analyst on Visa's Crypto Solutions team. It synthesises 560 rows of synthetic data across 80 client profiles and 480 market observations to surface stablecoin adoption trends, client readiness scores, settlement economics, and AI-generated pre-sales pitches. **The centrepiece is a Claude-powered GTM Pitch Generator — the kind of tool a solutions analyst uses before walking into a client meeting with a bank, fintech, or merchant.** Rather than a generic output, **Claude reads each client's actual data — their readiness score, identified gaps, annual settlement volume, and estimated savings — and generates a custom-tailored 3-bullet pre-sales pitch and objection handler specific to that client's situation. After the pitch is generated, an interactive Q&A chat lets you ask Claude follow-up questions about the client or pitch — grounded in that client's context, not generic advice.**
+### [Live Dashboard →](https://visa-solutions-analyst-nqkzmmsdmgor2awze5bn9m.streamlit.app/)
 
-## Live Dashboard
+![Market Landscape](docs/market-landscape.png)
+![GTM Playbook](docs/gtm-playbook.png)
 
-**URL:** https://visa-solutions-analyst-nqkzmmsdmgor2awze5bn9m.streamlit.app/
+**A client solutioning tool with a live Claude AI pitch generator — select any client and get a tailored 3-bullet pre-sales pitch, objection handler, and interactive Q&A grounded in their actual data.**
+
+---
+
+This project models the analytical and client-facing work performed by a Solutions Analyst on Visa's Crypto Solutions team. It synthesises 560 rows of synthetic data across 80 client profiles and 480 market observations to surface stablecoin adoption trends, client readiness scores, settlement economics, and AI-generated pre-sales pitches. Rather than a generic output, Claude reads each client's actual data — their readiness score, identified gaps, annual settlement volume, and estimated savings — and generates a custom-tailored 3-bullet pre-sales pitch and objection handler specific to that client's situation. After the pitch is generated, an interactive Q&A chat lets you ask Claude follow-up questions about the client or pitch — grounded in that client's context, not generic advice.
 
 ## Job Posting
 
@@ -34,15 +39,7 @@ This project directly demonstrates the role's core responsibilities: client stab
 
 **Page 3 — Settlement Economics:** The CFO business case. Models USDC rail costs vs traditional correspondent banking across 5 global regions. Inputs: annual settlement volume, region, integration complexity. Outputs: annual savings, implementation cost, payback period, and a 5-year cumulative savings schedule.
 
-**Page 4 — GTM Playbook & AI Pitch Generator:** The standout feature. Select any client and Claude AI generates a tailored 3-bullet pre-sales pitch based on their readiness tier, identified gaps, and savings potential — plus the top objection to anticipate. After the pitch is generated, an **interactive Q&A chat** lets you ask follow-up questions grounded in that client's context (e.g. *"How do I handle it if they mention a competitor?"* or *"What should my next steps be after this meeting?"*). Below the pitch: a full client prioritization matrix (readiness vs. volume) with quadrant reference lines to identify highest-priority targets, and a tier-based GTM approach guide.
-
-## Dashboard Preview
-
-### Market Landscape
-![Market Landscape](docs/market-landscape.png)
-
-### GTM Playbook & AI Pitch Generator
-![GTM Playbook](docs/gtm-playbook.png)
+**Page 4 — GTM Playbook & AI Pitch Generator:** The standout feature. Select any client and Claude AI generates a tailored 3-bullet pre-sales pitch based on their readiness tier, identified gaps, and savings potential — plus the top objection to anticipate. After the pitch is generated, an **interactive Q&A chat** lets you ask follow-up questions grounded in that client's context. Below the pitch: a full client prioritization matrix (readiness vs. volume) with quadrant reference lines to identify highest-priority targets, and a tier-based GTM approach guide.
 
 ## JD Alignment
 
